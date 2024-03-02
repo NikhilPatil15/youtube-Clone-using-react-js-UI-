@@ -1,23 +1,21 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import './index.css'
-import './App.css'
-import {Navbar,SideBar} from './components/index'
-
+import "./index.css";
+import "./App.css";
+import { Navbar, SideBar, Feed } from "./components/index";
 
 function App() {
-
-
   return (
     <>
-     <div>
-      <Navbar/>
-      <div className='flex'>
-      <SideBar/>
+      <div className='mt-0'>
+        <Navbar />
+        <div className="flex">
+          <SideBar />
+          <Feed />
+        </div>
       </div>
-     </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
