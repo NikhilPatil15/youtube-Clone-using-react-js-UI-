@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RxHamburgerMenu } from "react-icons/rx";   
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdOutlineVideoCall } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import Avatar from 'react-avatar';
-
+import {useSelector, useDispatch} from 'react-redux'
+import {setToggle} from '../redux/Features/ToggleSlice'
 const Navbar = () => {
+  const toggler = useSelector(state=>state.Toggle.open)
+  const dispatch = useDispatch()
+
+  const handleClick = ()=>{
+    dispatch(setToggle(toggler))
+    console.log(toggler);
+  }
   return (
     <div className='flex justify-center fixed  w-full z-10 bg-white'>
     <div className='flex justify-between items-center px-5 w-full relative'>
         <div className="flex justify-center items-start gap-4"> 
-            <RxHamburgerMenu  size={"30px"}/>
+            <RxHamburgerMenu  size={"30px"} onClick={handleClick}/>
             <img src="https://www.shutterstock.com/image-vector/youtube-logo-social-media-icon-260nw-2310134969.jpg" alt="Youtube"  width={"115px"} height={'6px'} className='m-0 p-0'/>
         </div>
         <div className='flex items-center w-[40%]' >
@@ -20,8 +28,8 @@ const Navbar = () => {
           <button className='rounded-3xl  w-[10%] rounded-l-none h-{42px} border border-gray-400 p-2 px-4' ><IoSearch size={"22px"}/></button>
         </div>
         <div className='flex items-center gap-4 mx-6'>
-          <MdOutlineVideoCall size={"25px"}/>
-          <IoMdNotificationsOutline size={"25px"}/>
+          <MdOutlineVideoCall size={"30px"}/>
+          <IoMdNotificationsOutline size={"30px"}/>
           <Avatar src='https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' size={"35px"} round="30px"/>
         </div>
     </div>
