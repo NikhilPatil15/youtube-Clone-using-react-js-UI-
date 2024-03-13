@@ -15,9 +15,9 @@ const ButtonsList = () => {
 
   ];
   return (
-    <div className="h-10 overflow-y-hidden overflow-x-scroll  text-lg  flex flex-row gap-8 mt-2 ml-2">
+    <div className="h-10 overflow-y-hidden overflow-x-scroll  text-lg  flex flex-row gap-6 ml-2">
       {buttons.map((button, index) => (
-        <button className="bg-gray-100 rounded-lg px-2 py-1" key={index}>
+        <button className="bg-gray-200 rounded-lg px-3 py-1" key={index}>
           {button}
         </button>
       ))}

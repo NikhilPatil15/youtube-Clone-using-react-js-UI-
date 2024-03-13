@@ -10,7 +10,10 @@ function App() {
       <div className='mt-0'>
         <Navbar />
         <div className="flex">
+
           <SideBar />
+ 
+        
           <Feed />
         </div>
       </div>
