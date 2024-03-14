@@ -3,7 +3,7 @@ import Avatar from "react-avatar";
 const Video = ({ url = "", title = "", channelName = "" }) => {
   return (
     <div className="w-90 cursor-pointer m-2">
-      <img src={url} alt={title} className="w-full rounded-xl hover:brightness-75" />
+      <img src={url} alt={title} className="w-full rounded-xl hover:brightness-75 hover:rounded-none transition-all" />
       <div className="flex mt-2">
         <Avatar
           src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"

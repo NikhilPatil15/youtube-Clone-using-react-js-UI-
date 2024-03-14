@@ -91,8 +91,8 @@ const SideBar = () => {
   return (
     <div
       className={`border border-gray-200 ${
-        toggle ? " w-[20%] " : "w-[5%]"
-      }  mt-12 overflow-y-scroll overflow-x-hidden relative left-0 right-0 top-0 bottom-0 h-[100vh] block`}
+        toggle ? " w-[15%] " : "w-[5%]"
+      }  mt-12 overflow-y-scroll overflow-x-hidden fixed left-0 right-0 top-0 bottom-0 h-[100vh] block`}
     >
       {list.map((element, index) => {
         return (
