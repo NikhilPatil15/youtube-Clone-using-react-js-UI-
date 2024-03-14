@@ -6,6 +6,7 @@ import { IoSearch } from "react-icons/io5";
 import Avatar from 'react-avatar';
 import {useSelector, useDispatch} from 'react-redux'
 import {setToggle} from '../redux/Features/ToggleSlice'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   const toggler = useSelector(state=>state.Toggle.open)
   const dispatch = useDispatch()
@@ -19,7 +20,7 @@ const Navbar = () => {
     <div className='flex justify-between items-center px-5 w-full relative'>
         <div className="flex justify-center items-start gap-4 "> 
             <RxHamburgerMenu  size={"30px"} onClick={handleClick} className='cursor-pointer' />
-            <img src="https://www.shutterstock.com/image-vector/youtube-logo-social-media-icon-260nw-2310134969.jpg" alt="Youtube"  width={"115px"} height={'6px'} className='m-0 p-0'/>
+            <Link to='/'><img src="https://www.shutterstock.com/image-vector/youtube-logo-social-media-icon-260nw-2310134969.jpg" alt="Youtube"  width={"115px"} height={'6px'} className='m-0 p-0'/></Link>
         </div>
         <div className='flex items-center w-[40%]' >
           <div className='w-[100%]  py-2 justify-center  my-3 px-4 border  border-gray-400 rounded-l-full'>

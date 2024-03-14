@@ -17,13 +17,14 @@ const VideoContainer = () => {
     }
 
     }
+
     useEffect(()=>{
       fetchVideos()
     },[])
   return (
     <div className={`grid ${toggle ? 'grid-cols-3 gap-3': 'grid-cols-4 gap-4'}   m-4`}>
       {data.map((video,index)=>(
-        <Video key={video.id}url={video.snippet.thumbnails.high.url} title={video.snippet.title} channelName={video.snippet.channelTitle}/>
+        <Video key={video.id}url={video.snippet.thumbnails.high.url} title={video.snippet.title} channelName={video.snippet.channelTitle} channelId={video.snippet.channelId}/>
       ))}
     </div>
   )
