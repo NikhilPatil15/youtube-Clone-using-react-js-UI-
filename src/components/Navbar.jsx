@@ -13,14 +13,17 @@ const Navbar = () => {
 
   const handleClick = ()=>{
     dispatch(setToggle(toggler))
-    console.log(toggler);
+
+  }
+  const LogohandleClick = ()=>{
+    dispatch(setToggle(false))
   }
   return (
     <div className='flex justify-center fixed  w-full z-10 bg-white'>
     <div className='flex justify-between items-center px-5 w-full relative'>
         <div className="flex justify-center items-start gap-4 "> 
             <RxHamburgerMenu  size={"30px"} onClick={handleClick} className='cursor-pointer' />
-            <Link to='/'><img src="https://www.shutterstock.com/image-vector/youtube-logo-social-media-icon-260nw-2310134969.jpg" alt="Youtube"  width={"115px"} height={'6px'} className='m-0 p-0'/></Link>
+            <Link to='/' onClick={LogohandleClick}><img src="https://www.shutterstock.com/image-vector/youtube-logo-social-media-icon-260nw-2310134969.jpg" alt="Youtube"  width={"115px"} height={'6px'} className='m-0 p-0'/></Link>
         </div>
         <div className='flex items-center w-[40%]' >
           <div className='w-[100%]  py-2 justify-center  my-3 px-4 border  border-gray-400 rounded-l-full'>

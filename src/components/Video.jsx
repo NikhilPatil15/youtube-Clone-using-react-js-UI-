@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Avatar from "react-avatar";
+
 const Video = ({ url = "", title = "", channelName = "", channelId ="" }) => {
   const[icon,setIcon] = useState('')
   const getYoutubeChannel = async()=>{
@@ -14,10 +15,11 @@ const Video = ({ url = "", title = "", channelName = "", channelId ="" }) => {
 
   useEffect(()=>{
     getYoutubeChannel()
-  },[icon])
+  },[])
   return (
+
     <div className="w-90 cursor-pointer m-2">
-      <img src={url} alt={title} className="w-full rounded-xl hover:brightness-75 hover:rounded-none transition-all" />
+      <img src={url} alt={title} className="w-full rounded-xl hover:brightness-75 hover:rounded-none hover:transition-all" />
       <div className="flex mt-2">
         <Avatar
           src={icon}
@@ -31,6 +33,7 @@ const Video = ({ url = "", title = "", channelName = "", channelId ="" }) => {
         </div>
       </div>
     </div>
+
   );
 };
 

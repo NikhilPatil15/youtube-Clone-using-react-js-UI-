@@ -12,14 +12,22 @@ const ButtonsList = () => {
     "Chai aur Code",
     "React",
     "RTKQuery",
+    'Animation',
+    'COC',
+    'Bgmi',
+    'Mr.Beast',
+    'Chhota bheem',
+
 
   ];
   return (
-    <div className="h-10 overflow-y-hidden overflow-x-scroll  text-lg  flex flex-row gap-6 ml-2">
+    <div className="overflow-x-scroll no-scrollbar flex w-full fixed bg-white z-10">
       {buttons.map((button, index) => (
-        <button className="bg-gray-200 rounded-lg px-3 py-1" key={index}>
-          {button}
+        <div key={index} className="p-3">
+        <button className="bg-gray-200 rounded-lg px-4 py-1 focus:bg-slate-900 focus:text-white" >
+          <span className="whitespace-nowrap">{button}</span>
         </button>
+        </div>
       ))}
     </div>
   );

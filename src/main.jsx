@@ -10,7 +10,7 @@ const router = createBrowserRouter(
     createRoutesFromChildren(
       <Route path='/' element={<App/>}>
         <Route index path="/" element={<Feed/>}/>
-        <Route path="/playingVideo" element={<PlayingVideo/>}/>
+        <Route path="/video" element={<PlayingVideo/>}/>
       </Route>
     )
   )
