@@ -31,7 +31,6 @@ const Navbar = () => {
 
   const searchVideo = () => {
     dispatch(setCategory(input));
-    setInput("");
   };
 
   const searchSuggestion = async () => {
@@ -52,13 +51,13 @@ const Navbar = () => {
   return (
     <div className="flex justify-center fixed  w-full z-10 bg-white">
       <div className="flex justify-between items-center px-5 w-full relative">
-        <div className="flex justify-center items-start gap-4 ">
+        <div className="flex justify-center items-start gap-4 max-[640px]:gap-3">
           <RxHamburgerMenu
             size={"30px"}
             onClick={handleClick}
             className="cursor-pointer"
           />
-          <Link to="/" onClick={LogohandleClick}>
+          <Link to="/" onClick={LogohandleClick} className="max-[640px]:hidden">
             <img
               src="https://www.shutterstock.com/image-vector/youtube-logo-social-media-icon-260nw-2310134969.jpg"
               alt="Youtube"
@@ -68,7 +67,7 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className="flex items-center w-[40%]">
+        <div className="flex items-center w-[40%] max-[640px]:w-full max-[640px]:ml-2">
           <div className="w-[100%]  py-2 justify-center  my-3 px-4 border  border-gray-400 rounded-l-full">
             <input
               onFocus={() => setIsSuggestion(true)}
@@ -80,13 +79,13 @@ const Navbar = () => {
             />
           </div>
           <button
-            className="rounded-3xl  w-[10%] rounded-l-none h-{42px} border border-gray-400 p-2 px-4"
+            className="rounded-3xl  w-[10%] rounded-l-none h-{42px} border border-gray-400 p-2 px-4 max-[640px]:px-1 max-[1024px]:px-2"
             onClick={searchVideo}
           >
             <IoSearch size={"22px"} />
           </button>
-          {(isSuggestion && searchSuggestions.length !== 0) && (
-            <div className="absolute top-3 z-50 w-[30%] py-5 bg-white shadow-lg mt-12 rounded-lg border border-gray-200">
+          {isSuggestion && searchSuggestions.length !== 0 && (
+            <div className="absolute top-3 z-50 w-[30%] py-5 bg-white shadow-lg mt-12 rounded-lg border border-gray-200 ">
               <ul>
                 {searchSuggestions.map((item, index) => {
                   return (
@@ -102,7 +101,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <div className="flex items-center gap-4 mx-6">
+        <div className="hidden lg:flex lg:items-center gap-4 mx-6 ">
           <MdOutlineVideoCall size={"30px"} />
           <IoMdNotificationsOutline size={"30px"} />
           <Avatar

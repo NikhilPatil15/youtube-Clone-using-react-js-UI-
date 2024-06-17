@@ -5,7 +5,7 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { useSelector } from "react-redux";
 
 const SideBar = () => {
-  const list = [
+   const list = [
     {
       icons: <IoHomeOutline size={"25px"} />,
       title: <span>Home</span>,
@@ -91,19 +91,19 @@ const SideBar = () => {
   return (
     <div
       className={`border border-gray-200 ${
-        toggle ? " w-[15%] " : "w-[5%]"
-      }  mt-12 overflow-y-scroll overflow-x-hidden fixed left-0 right-0 top-0 bottom-0 h-[100vh] block`}
+        toggle ? " w-[15%] max-[1024px]:w-[25%] " : "w-[5%] max-[1024px]:w-[10%]"
+      }  mt-16 overflow-y-scroll overflow-x-hidden fixed left-0 right-0 top-0 bottom-0 h-[100vh] max-[640px]:hidden `}
     >
       {list.map((element, index) => {
         return (
           <div
-            className={`${toggle && "flex flex-row "}  mx-5 my-5`}
+            className={`${toggle && "flex flex-row "}  mx-5 my-5 `}
             key={index}
           >
             {element.icons}
             <p
               className={`${
-                toggle ? "ml-10 text-xl" : "text-sm ml-0 truncate"
+                toggle ? "ml-10 text-xl" : "text-sm ml-0 truncate text-left"
               } `}
             >
               {element.title}
@@ -113,6 +113,9 @@ const SideBar = () => {
       })}
     </div>
   );
+
 };
 
 export default SideBar;
+
+

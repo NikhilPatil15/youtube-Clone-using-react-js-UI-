@@ -55,7 +55,7 @@ const VideoContainer = () => {
 
   if (isLoading)
     return (
-      <div className={`grid ${toggle ? "grid-cols-3 gap-3" : "grid-cols-4 gap-4"}  m-4 mt-14`}>
+      <div className={`grid ${toggle ? "grid-cols-3 gap-3" : "grid-cols-4 gap-4"}  m-4 mt-14 max-[640px]:grid-cols-1 max-[1024px]:grid-cols-2 `}>
         {Array.from({ length: video.length }).map((item, index) => {
           return (
             <div className="w-full" key={index}>
@@ -70,7 +70,7 @@ const VideoContainer = () => {
       <div
         className={`grid ${
           toggle ? "grid-cols-3 gap-3" : "grid-cols-4 gap-4"
-        }  m-4 mt-14`}
+        }  m-4 mt-14 max-[640px]:grid-cols-1 max-[640px]:ml-[-70px] max-[1024px]:grid-cols-2 `}
       >
         {video.map((video, index) => (
           <Link
@@ -79,6 +79,7 @@ const VideoContainer = () => {
               typeof video.id === "object" ? video.id.videoId : video.id
             }`}
             onClick={handleClick}
+            className={`${toggle && "max-[640px]:hidden"}`}
           >
             <Video
               url={video.snippet.thumbnails.high.url}

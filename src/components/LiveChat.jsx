@@ -12,7 +12,7 @@ const LiveChat = () => {
     useEffect(()=>{
         const timer = setInterval(()=>{
             dispatch(setMessage({name:generateRandomName(), message:generateRandomMessage(16)}))
-        },1500)
+        },5000)
 
         return(()=>{
             clearInterval(timer)

@@ -30,7 +30,7 @@ const ButtonsList = () => {
   }
   
   return (
-    <div className="overflow-x-scroll no-scrollbar flex w-full fixed bg-white z-10">
+    <div className="overflow-x-scroll no-scrollbar flex w-full fixed bg-white z-10  max-[640px]:ml-[-100px]">
       {buttons.map((button, index) => (
         <div key={index} className="p-3">
           <button className="bg-gray-200 rounded-lg px-4 py-1 focus:bg-slate-900 focus:text-white" onClick={()=>(handleClick(button))}>
